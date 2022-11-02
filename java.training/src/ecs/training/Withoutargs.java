@@ -17,7 +17,7 @@ abstract class LuckNo1{
 void luckno(int lno);
  }
 
-//class to implemnts inheritances
+//class to implemnts  multiple type of inheritances
 
 class  Akash1 extends LuckNo1 implements Nickname1 {
 	int lno=4;

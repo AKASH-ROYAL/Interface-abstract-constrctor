@@ -20,7 +20,7 @@ abstract class LuckNo
 int lno=5;
 }
 
- //Implementing multiple Inheritance
+ //Implementing multiple type of Inheritance
 
 class  Akash extends LuckNo implements Nickname {
 public void name()
