@@ -1,17 +1,26 @@
 package ecs.training;
 
-interface Nickname1{
-String nickname=" Code wizard";
-void nick();
-void name();
+// interface
+
+interface nicknamen1{
+	void name();
 }
+interface Nickname1 extends nicknamen1{
+String nicknamem=" Code wizard";
+void nick();
+}
+
+//abstract class 
 
 abstract class LuckNo1{
-	 int lno=5;
-abstract void luckno();
-}
+	abstract // int lno=5;
+void luckno(int lno);
+ }
 
-class  SimpleName1 extends LuckNo implements Nickname1 {
+//class to implemnts inheritances
+
+class  Akash1 extends LuckNo1 implements Nickname1 {
+	int lno=4;
 public void name()
 {
 	String str= "Akash" ;
@@ -19,14 +28,15 @@ public void name()
 
 	}
 public void nick() { 
-	System.out.println("NICK NAME ="+ nickname);
+	System.out.println("NICK NAME ="+ nicknamem);
 }
-public void luckno(){
+void luckno(int lno){ 
 	System.out.println("mMy lucky no is " + lno);
 }
 }
 
-class praveen1 implements Nickname1{
+class praveen1 extends LuckNo1 implements Nickname1 
+{
 	
 	public void name()
 	{
@@ -35,35 +45,65 @@ class praveen1 implements Nickname1{
 
 		}
 	public void nick() { 
-		System.out.println("NICK NAME ="+ nickname+" on JAVA");
+		System.out.println("NICK NAME ="+ nicknamem+" on JAVA");
 	}
-	public void luckno(){
-		int lno=10;
+	
+	void luckno(int lno){ 
 		System.out.println("mMy lucky no is " + lno);
 	}
-}
-class Construct111 extends SimpleName1 {
- Construct111(){
+} 
+
+class surya1 extends LuckNo1 implements Nickname1 
+{
+	
+	public void name()
+	{
+		String str= "surya" ;
+		System.out.println( str);
+
+		}
+	public void nick() { 
+		System.out.println("NICK NAME ="+ nicknamem+" Mass ECE");
+	}
+	void luckno(int lno){ 
+		System.out.println("mMy lucky no is " + lno);
+	}
+	}
+
+class Construct1 extends Akash1 {
+ Construct1(){
 		name();
 		nick();
-		luckno();
+		luckno(1);
 }}
-class Construct11 extends praveen1
+class Construct2 extends praveen1
 {
-	Construct11()
+	Construct2()
 	{
 	name();
 	nick();
-	luckno();
+	luckno(2);
     }
 }
- 
+class Construct3 extends surya1
+{
+	Construct3()
+	{
+	name();
+	nick();
+	luckno(3);
+    }
+}
+
+//Main class
 public class Withoutargs{
+	
 public static void main(String[] args) 
 {
 System.out.println(" without arguments......");
-Construct111 obect=new Construct111();
-Construct11 obect1=new Construct11();
+Construct1 c1=new Construct1();
+Construct2 c2=new Construct2();
+Construct3 c3=new Construct3();
 }
 }
 

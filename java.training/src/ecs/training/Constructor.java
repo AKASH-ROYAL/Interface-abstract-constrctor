@@ -1,19 +1,26 @@
 package ecs.training;
+// interface
 
-interface Nickname
+
+interface nicknamen{
+	void name();
+}
+
+interface Nickname extends nicknamen
 {
 String nickname=" Code wizard";
 void nick();
-void name();
 void luckno();
 }
+
+// Abstract class
 
 abstract class LuckNo
 {
 int lno=5;
 }
 
-
+ //Implementing multiple Inheritance
 
 class  Akash extends LuckNo implements Nickname {
 public void name()
@@ -32,13 +39,11 @@ public void luckno()
 }
 
 class praveen extends LuckNo implements Nickname{
-	
 	public void name()
 	{
 		String str= "Praveen" ;
 		System.out.println( str);
-
-		}
+}
 	public void nick() { 
 		System.out.println("NICK NAME ="+ nickname+"  JAVA");
 	}
@@ -47,6 +52,7 @@ class praveen extends LuckNo implements Nickname{
 		System.out.println("Lucky no is " + lno);
 	}
 }
+
 class ragavan extends LuckNo implements Nickname{
 	
 	public void name()
@@ -63,6 +69,7 @@ class ragavan extends LuckNo implements Nickname{
 		System.out.println("Lucky no is " + lno);
 	}
 }
+
 class surya extends LuckNo implements Nickname{
 	
 	public void name()
@@ -79,8 +86,8 @@ class surya extends LuckNo implements Nickname{
 		System.out.println("Lucky no is " + lno);
 	}
 }
-class argument {
-	
+
+ class argument {
 	void argmethod(Nickname n) {
 	System.out.println("This is method that how we have to pass arguments")	;
 	n.name();
@@ -88,33 +95,15 @@ class argument {
 	n.luckno();
 	}
 }
+ // main class
 
-
-//class Construct extends SimpleName {
-// Construct(){
-//		name();
-//		nick();
-//		luckno();
-//}}
-//class Construct1 extends praveen
-//{
-//	Construct1(){
-//	name();
-//	nick();
-//	luckno();
-//}
-//}
-// 
 public class Constructor{
-public static void main(String[] args) 
-{
-//Construct obect=new Construct();
-//Construct1 obect1=new Construct1();
-	 Akash a = new Akash();
+public static void main(String[] args) {
+    Akash  a = new Akash();
  praveen   p = new praveen();
-argument arg = new argument();
    ragavan r = new ragavan();
      surya s = new surya();
+argument arg = new argument();
 arg.argmethod(a);
 arg.argmethod(p);
 arg.argmethod(r);
